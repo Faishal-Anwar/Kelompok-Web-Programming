@@ -1,14 +1,14 @@
 <?php include 'header.php'; ?>
 
 <div class="card">
-    <div class="card-header">
-        <h2 class="mb-0">Data Barang Keluar</h2>
+    <div class="card-header d-flex justify-content-between align-items-center">
+        <h2 class="mb-0"><i class="fas fa-arrow-circle-up"></i> Data Barang Keluar</h2>
+        <button data-toggle="modal" data-target="#myModal" class="btn btn-primary"><i class="fas fa-plus"></i> Catat Barang Keluar</button>
     </div>
     <div class="card-body">
-        <button data-toggle="modal" data-target="#myModal" class="btn btn-primary mb-3">Catat Barang Keluar</button>
         <div class="table-responsive">
-            <table id="datatable" class="table table-striped table-bordered">
-                <thead>
+            <table id="datatable" class="table table-striped table-hover dt-responsive nowrap" style="width:100%">
+                <thead class="thead-dark">
                     <tr>
                         <th>No</th>
                         <th>Tanggal</th>
@@ -47,18 +47,18 @@
         <div class="modal-content">
             <form method="post" action="barang_keluar_act.php">
                 <div class="modal-header">
-                    <h4 class="modal-title">Catat Barang Keluar</h4>
+                    <h4 class="modal-title"><i class="fas fa-plus-circle"></i> Catat Barang Keluar</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
                         <label>Nama Barang</label>
-                        <select name="barang" class="form-control">
+                        <select name="barang" class="form-control select2">
                         <?php 
                         $det=mysqli_query($conn,"select * from sstock_brg order by nama ASC");
                         while($d=mysqli_fetch_array($det)){
                         ?>
-                            <option value="<?php echo $d['idx'] ?>"><?php echo $d['nama'] ?> <?php echo $d['jenis'] ?> <?php echo $d['merk'] ?></option>
+                            <option value="<?php echo $d['idx'] ?>"><?php echo $d['nama'] ?> (<?php echo $d['jenis'] ?> - <?php echo $d['merk'] ?>)</option>
                         <?php 
                         }
                         ?>
@@ -70,15 +70,15 @@
                     </div>
                     <div class="form-group">
                         <label>Jumlah</label>
-                        <input name="qty" type="number" min="1" class="form-control" placeholder="Qty" required>
+                        <input name="qty" type="number" min="1" class="form-control" placeholder="Jumlah barang keluar" required>
                     </div>
                     <div class="form-group">
                         <label>Penerima</label>
-                        <input name="penerima" type="text" class="form-control" placeholder="Penerima" required>
+                        <input name="penerima" type="text" class="form-control" placeholder="Nama penerima barang" required>
                     </div>
                     <div class="form-group">
                         <label>Keterangan</label>
-                        <input name="ket" type="text" class="form-control" placeholder="Keterangan">
+                        <input name="ket" type="text" class="form-control" placeholder="Contoh: Untuk departemen A">
                     </div>
                 </div>
                 <div class="modal-footer">

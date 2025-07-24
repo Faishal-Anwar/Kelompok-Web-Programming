@@ -1,5 +1,7 @@
+@import 'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap';
+
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-color: #f8f9fa;
 }
 
@@ -12,9 +14,11 @@ body {
 #sidebar {
     min-width: 250px;
     max-width: 250px;
-    background: #343a40;
+    background: #2c3e50; /* Warna biru tua */
     color: #fff;
     transition: all 0.3s;
+    border-radius: 0 15px 15px 0;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
 }
 
 #sidebar.active {
@@ -23,54 +27,113 @@ body {
 
 #sidebar .sidebar-header {
     padding: 20px;
-    background: #212529;
+    background: #1a252f;
+    border-bottom: 1px solid #3a4c5e;
+}
+
+#sidebar .sidebar-header h3 {
+    color: #fff;
+    font-weight: 600;
 }
 
 #sidebar ul.components {
     padding: 20px 0;
-    border-bottom: 1px solid #47748b;
 }
 
 #sidebar ul p {
-    color: #fff;
-    padding: 10px;
+    color: #bdc3c7; /* Abu-abu terang */
+    padding: 10px 20px;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    font-weight: 600;
 }
 
 #sidebar ul li a {
-    padding: 10px;
+    padding: 15px 20px;
     font-size: 1.1em;
     display: block;
-    color: #adb5bd;
+    color: #bdc3c7;
     text-decoration: none;
+    transition: all 0.2s;
+    border-left: 3px solid transparent;
 }
 
 #sidebar ul li a:hover {
     color: #fff;
-    background: #495057;
+    background: #34495e;
+    border-left: 3px solid #3498db; /* Aksen biru */
 }
 
 #sidebar ul li.active > a, a[aria-expanded="true"] {
     color: #fff;
-    background: #212529;
+    background: #34495e;
+    border-left: 3px solid #3498db;
+}
+
+#sidebar ul li a i {
+    margin-right: 10px;
+}
+
+#sidebar ul.CTAs {
+    padding: 20px;
+}
+
+#sidebar ul.CTAs a.logout {
+    text-align: center;
+    font-size: 1.1em;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    background: #c0392b; /* Merah */
+    color: #fff;
+}
+
+#sidebar ul.CTAs a.logout:hover {
+    background: #e74c3c;
 }
 
 #content {
     width: 100%;
-    padding: 20px;
+    padding: 20px 40px;
     min-height: 100vh;
     transition: all 0.3s;
 }
 
-.card {
+.navbar {
+    background: #fff !important;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     margin-bottom: 20px;
+}
+
+.btn-info {
+    background: #3498db !important;
+    border-color: #3498db !important;
+    transition: all 0.3s;
+}
+
+.btn-info:hover {
+    background: #2980b9 !important;
+    border-color: #2980b9 !important;
+}
+
+.card {
     border: none;
-    border-radius: .5rem;
-    box-shadow: 0 0 1rem rgba(0,0,0,.05);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+    margin-bottom: 25px;
 }
 
 .card-header {
     background-color: #fff;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #f0f0f0;
+    font-weight: 600;
+    padding: 1rem 1.5rem;
+    border-radius: 10px 10px 0 0 !important;
+}
+
+.card-body {
+    padding: 1.5rem;
 }
 
 .login-container {
@@ -78,11 +141,34 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f8f9fa;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
 }
 
 .login-card {
     width: 100%;
-    max-width: 400px;
-    padding: 2rem;
+    max-width: 420px;
+    padding: 2.5rem;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.login-card h2 {
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.modal-content {
+    border-radius: 10px;
+}
+
+.dataTables_wrapper .dataTables_filter input {
+    border-radius: 5px;
+    padding: 5px;
+    border: 1px solid #ddd;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    border-radius: 5px !important;
 }
