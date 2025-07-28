@@ -6,4 +6,4 @@ Nama Kelompok  :
 2. Haydar Fahri Alaudin (32602300010)
 3. Mumtaz Fikri Nasrullah (32602300002)
 4. Alif Naufal Adani (32602300006)
-5. Muhammad Yanuar Anshori (32602300028) A
+5. Muhammad Yanuar Anshori (32602300028)
